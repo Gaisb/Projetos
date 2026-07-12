@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu treino — FORTIS Aluno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-body">
+
+<div class="dash-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar">
+    <div class="dash-brand">
+      FOR<span>TIS</span>
+      <span class="role-tag">Aluno</span>
+    </div>
+    <nav class="dash-nav">
+      <a href="painel-usuario.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        Início
+      </a>
+      <a href="aluno-treino.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Meu treino
+      </a>
+      <a href="aluno-evolucao.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        Minha evolução
+      </a>
+      <a href="aluno-pagamentos.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+        Pagamentos
+      </a>
+      <a href="aluno-avaliacoes.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5m6 14V9m6 10V3"/></svg>
+        Avaliações físicas
+      </a>
+      <a href="aluno-dieta.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+        Dieta
+      </a>
+      <a href="painel-professor.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/><path d="M16 3l4 4-4 4M20 7H8"/></svg>
+        Visão do professor
+      </a>
+      <div class="dash-nav-divider"></div>
+      <a href="selecao-painel.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Trocar de painel
+      </a>
+      <a href="index.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Sair do FORTIS
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="dash-main">
+
+    <!-- TOPBAR -->
+    <div class="dash-topbar">
+      <div>
+        <span class="eyebrow">Treino de hoje</span>
+        <h1>Treino <em style="color:var(--ember);font-style:normal;">A</em> — Peito e tríceps</h1>
+      </div>
+      <div class="dash-user">
+        <div class="dash-user-meta" style="text-align:right;">
+          <div class="nm">Marina Santos</div>
+          <div class="sb">Plano trimestral · ativo</div>
+        </div>
+        <div class="dash-avatar">M</div>
+      </div>
+    </div>
+
+    <!-- HERO TREINO -->
+    <div class="hero-treino" style="margin-bottom:22px;">
+      <div class="ht-label">Sessão de hoje</div>
+      <h3>Treino A — Peito e tríceps</h3>
+      <div class="ht-sub">4 exercícios · intervalo 60–90 s · dificuldade moderada</div>
+      <div class="ht-meta">
+        <span><strong>07:00</strong> horário</span>
+        <span><strong>Carlos M.</strong> professor</span>
+      </div>
+      <a class="btn-action" href="#">Iniciar treino</a>
+    </div>
+
+    <!-- EXERCÍCIOS -->
+    <div class="dash-block">
+      <div class="dash-block-head">
+        <h3>Exercícios</h3>
+        <a class="see-all" href="#">Ver histórico →</a>
+      </div>
+      <div class="ex-list">
+        <div class="ex-item">
+          <div>
+            <div class="ex-name">Supino reto</div>
+            <div class="ex-meta">4 séries · 10 repetições</div>
+          </div>
+          <div class="ex-tag">42 kg</div>
+        </div>
+        <div class="ex-item">
+          <div>
+            <div class="ex-name">Supino inclinado halteres</div>
+            <div class="ex-meta">3 séries · 12 repetições</div>
+          </div>
+          <div class="ex-tag">18 kg</div>
+        </div>
+        <div class="ex-item">
+          <div>
+            <div class="ex-name">Crucifixo na polia</div>
+            <div class="ex-meta">3 séries · 15 repetições</div>
+          </div>
+          <div class="ex-tag">14 kg</div>
+        </div>
+        <div class="ex-item">
+          <div>
+            <div class="ex-name">Tríceps na polia</div>
+            <div class="ex-meta">4 séries · 12 repetições</div>
+          </div>
+          <div class="ex-tag">22 kg</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRÓXIMOS TREINOS -->
+    <div class="dash-block" style="margin-top:22px;">
+      <div class="dash-block-head">
+        <h3>Próximos treinos</h3>
+        <a class="see-all" href="#">Calendário →</a>
+      </div>
+      <div class="next-list">
+        <div class="next-item">
+          <div>
+            <div class="ni-day">Amanhã · sábado</div>
+            <div class="ni-name">Treino C — Pernas</div>
+          </div>
+          <div class="ni-time">10:00</div>
+        </div>
+        <div class="next-item">
+          <div>
+            <div class="ni-day">Segunda-feira</div>
+            <div class="ni-name">Treino B — Costas e bíceps</div>
+          </div>
+          <div class="ni-time">07:00</div>
+        </div>
+        <div class="next-item">
+          <div>
+            <div class="ni-day">Terça-feira</div>
+            <div class="ni-name">Treino D — Ombros</div>
+          </div>
+          <div class="ni-time">—</div>
+        </div>
+        <div class="next-item">
+          <div>
+            <div class="ni-day">Quarta-feira</div>
+            <div class="ni-name">Treino A — Peito e tríceps</div>
+          </div>
+          <div class="ni-time">07:00</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="transitions.js"></script>
+</body>
+</html>

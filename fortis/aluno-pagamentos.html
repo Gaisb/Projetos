@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagamentos — FORTIS Aluno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-body">
+
+<div class="dash-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar">
+    <div class="dash-brand">
+      FOR<span>TIS</span>
+      <span class="role-tag">Aluno</span>
+    </div>
+    <nav class="dash-nav">
+      <a href="painel-usuario.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        Início
+      </a>
+      <a href="aluno-treino.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Meu treino
+      </a>
+      <a href="aluno-evolucao.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        Minha evolução
+      </a>
+      <a href="aluno-pagamentos.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+        Pagamentos
+      </a>
+      <a href="aluno-avaliacoes.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5m6 14V9m6 10V3"/></svg>
+        Avaliações físicas
+      </a>
+      <a href="aluno-dieta.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+        Dieta
+      </a>
+      <a href="painel-professor.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/><path d="M16 3l4 4-4 4M20 7H8"/></svg>
+        Visão do professor
+      </a>
+      <div class="dash-nav-divider"></div>
+      <a href="selecao-painel.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Trocar de painel
+      </a>
+      <a href="index.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Sair do FORTIS
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="dash-main">
+
+    <!-- TOPBAR -->
+    <div class="dash-topbar">
+      <div>
+        <span class="eyebrow">Sua assinatura</span>
+        <h1>Pagamentos e <em style="color:var(--ember);font-style:normal;">plano</em></h1>
+      </div>
+      <div class="dash-user">
+        <div class="dash-user-meta" style="text-align:right;">
+          <div class="nm">Marina Santos</div>
+          <div class="sb">Plano trimestral · ativo</div>
+        </div>
+        <div class="dash-avatar">M</div>
+      </div>
+    </div>
+
+    <!-- PLANO + PRÓXIMO VENCIMENTO -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;">
+      <div class="plan-card">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;">Seu plano</div>
+        <div class="pl-amount">R$ 280</div>
+        <div class="pl-cycle">Trimestral · 12x R$ 280</div>
+        <div class="pl-due">
+          Próximo vencimento: <strong style="color:var(--bone);">05/07</strong>
+        </div>
+        <a class="btn-action" href="#" style="margin-top:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+          Pagar agora
+        </a>
+      </div>
+
+      <div class="freq-card">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;">Status da assinatura</div>
+        <div class="freq-streak">
+          <span class="big" style="color:#3DDC84;">●</span>
+          <span class="lbl">Ativa · em dia</span>
+        </div>
+        <div class="freq-dots">
+          <div class="freq-dot on">M</div>
+          <div class="freq-dot on">A</div>
+          <div class="freq-dot on">M</div>
+          <div class="freq-dot on">A</div>
+          <div class="freq-dot on">M</div>
+          <div class="freq-dot">J</div>
+          <div class="freq-dot">J</div>
+        </div>
+        <div class="freq-foot">
+          <strong style="color:var(--bone);">6 meses</strong> de plano consecutivo
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTRATO -->
+    <div class="dash-block">
+      <div class="dash-block-head">
+        <h3>Histórico de pagamentos</h3>
+        <a class="see-all" href="#">Baixar comprovante →</a>
+      </div>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Referência</th><th>Método</th><th>Valor</th><th>Data</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mensalidade · junho</td>
+            <td class="num-cell">Pix</td>
+            <td class="num-cell">R$ 280,00</td>
+            <td class="num-cell">Pago · 02/06</td>
+            <td><span class="pill ok">Pago</span></td>
+          </tr>
+          <tr>
+            <td>Mensalidade · maio</td>
+            <td class="num-cell">Pix</td>
+            <td class="num-cell">R$ 280,00</td>
+            <td class="num-cell">Pago · 02/05</td>
+            <td><span class="pill ok">Pago</span></td>
+          </tr>
+          <tr>
+            <td>Mensalidade · abril</td>
+            <td class="num-cell">Cartão</td>
+            <td class="num-cell">R$ 280,00</td>
+            <td class="num-cell">Pago · 03/04</td>
+            <td><span class="pill ok">Pago</span></td>
+          </tr>
+          <tr>
+            <td>Mensalidade · março</td>
+            <td class="num-cell">Pix</td>
+            <td class="num-cell">R$ 280,00</td>
+            <td class="num-cell">Pago · 02/03</td>
+            <td><span class="pill ok">Pago</span></td>
+          </tr>
+          <tr>
+            <td>Avaliação física avulsa</td>
+            <td class="num-cell">Pix</td>
+            <td class="num-cell">R$ 80,00</td>
+            <td class="num-cell">Pago · 18/02</td>
+            <td><span class="pill ok">Pago</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+<script src="transitions.js"></script>
+</body>
+</html>

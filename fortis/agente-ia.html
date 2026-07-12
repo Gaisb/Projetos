@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agente IA — FORTIS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">FOR<span>TIS</span></a>
+    <div class="nav-links">
+      <a href="index.html#recursos">Recursos</a>
+      <a href="index.html#funciona">Como funciona</a>
+      <a href="calculo-basal.html">Calculadora TMB</a>
+      <a href="agente-ia.html">Agente IA</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <a class="nav-cta" href="login.html">Login / Cadastro</a>
+  </nav>
+</header>
+
+<main>
+  <section class="inner-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Início</a> / Agente IA</div>
+      <span class="eyebrow">Prévia visual · sem IA implementada</span>
+      <h1>Um assistente para <em style="color:var(--ember);font-style:normal;">tirar dúvidas na hora</em></h1>
+      <p class="lead">Esta tela mostra apenas a <b style="color:var(--bone);">ideia visual</b> de como seria o chat dentro do app — perguntas sobre treino, exercícios e progresso do aluno. Nenhuma inteligência artificial real está conectada aqui; as respostas abaixo são apenas exemplos fixos para ilustrar a experiência.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap chat-wrap">
+      <div class="chat-shell">
+
+        <div class="chat-head">
+          <div class="chat-avatar">F</div>
+          <div>
+            <div class="ch-name">Agente FORTIS</div>
+            <div class="ch-status">Prévia — respostas de exemplo</div>
+          </div>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+          <div class="msg bot">Olá! Eu sou o assistente do FORTIS 💪 Posso ajudar com dúvidas sobre treino, exercícios ou o progresso dos seus alunos. O que você gostaria de saber?</div>
+          <div class="msg user">Quais exercícios são bons para substituir o leg press?</div>
+          <div class="msg bot">Boas alternativas para leg press: agachamento livre, afundo, cadeira extensora combinada com cadeira flexora, e step-up com halteres. A escolha depende do equipamento disponível e do objetivo do aluno.</div>
+        </div>
+
+        <div class="chat-suggestions">
+          <button class="chip" data-msg="Como ajustar a carga de um treino de hipertrofia?">Ajustar carga</button>
+          <button class="chip" data-msg="Meu aluno relatou dor no ombro, o que eu faço?">Dor relatada pelo aluno</button>
+          <button class="chip" data-msg="Como calcular o intervalo ideal entre séries?">Intervalo entre séries</button>
+        </div>
+
+        <div class="chat-input-row">
+          <input type="text" id="chatInput" placeholder="Digite sua pergunta...">
+          <button class="chat-send" id="chatSend">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+        </div>
+
+      </div>
+      <p class="chat-disclaimer">Protótipo de apresentação · as respostas são exemplos fixos, sem conexão com um modelo de IA real.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <a href="index.html" class="logo" style="font-size:18px;">FOR<span>TIS</span></a>
+    <div class="foot-note">Conceito de apresentação · sem vínculo com MFIT Personal ou terceiros</div>
+    <div class="foot-badge">v0.1 — proposta inicial</div>
+  </div>
+</footer>
+
+<script>
+  const chatBody = document.getElementById('chatBody');
+  const chatInput = document.getElementById('chatInput');
+
+  // banco simples de respostas fixas, só para ilustrar a experiência de chat
+  const respostas = [
+    "Boa pergunta! Em uma versão real, o agente buscaria isso no histórico do aluno e na biblioteca de exercícios do app.",
+    "Essa é uma funcionalidade prevista para o assistente — por aqui, na prévia, a resposta é só um exemplo ilustrativo.",
+    "Em produção, o agente cruzaria isso com a anamnese e a avaliação física do aluno antes de responder.",
+    "Ótimo ponto para validar com o time — essa resposta aqui é apenas um exemplo para mostrar o formato da conversa."
+  ];
+
+  function addMsg(texto, autor){
+    const div = document.createElement('div');
+    div.className = `msg ${autor}`;
+    div.textContent = texto;
+    chatBody.appendChild(div);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function showTyping(){
+    const div = document.createElement('div');
+    div.className = 'msg bot typing';
+    div.id = 'typingIndicator';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    chatBody.appendChild(div);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function sendMessage(texto){
+    if(!texto.trim()) return;
+    addMsg(texto, 'user');
+    chatInput.value = '';
+    showTyping();
+
+    setTimeout(()=>{
+      const typing = document.getElementById('typingIndicator');
+      if(typing) typing.remove();
+      const resposta = respostas[Math.floor(Math.random()*respostas.length)];
+      addMsg(resposta, 'bot');
+    }, 1100);
+  }
+
+  document.getElementById('chatSend').addEventListener('click', ()=> sendMessage(chatInput.value));
+  chatInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') sendMessage(chatInput.value); });
+  document.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click', ()=> sendMessage(chip.dataset.msg));
+  });
+</script>
+
+<script src="transitions.js"></script>
+</body>
+</html>

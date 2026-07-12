@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Admin — FORTIS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-body">
+
+<div class="dash-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar">
+    <div class="dash-brand">
+      FOR<span>TIS</span>
+      <span class="role-tag">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <a href="painel-admin.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        Visão geral
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        Relatórios
+      </a>
+      <div class="dash-nav-divider"></div>
+      <a href="selecao-painel.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Trocar de painel
+      </a>
+      <a href="index.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Sair do FORTIS
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="dash-main">
+
+    <!-- TOPBAR COMPACTA -->
+    <div class="dash-topbar">
+      <div>
+        <span class="eyebrow">Painel de monitoramento</span>
+        <h1>Saúde da <em style="color:var(--ember);font-style:normal;">plataforma</em></h1>
+      </div>
+      <div class="dash-user">
+        <div class="dash-user-meta" style="text-align:right;">
+          <div class="nm">Admin</div>
+          <div class="sb">Somente leitura</div>
+        </div>
+        <div class="dash-avatar" style="background:var(--gold);">A</div>
+      </div>
+    </div>
+
+    <!-- 6 KPIs em linha (mais compactos) -->
+    <div class="kpi-grid-admin">
+      <div class="kpi-mini">
+        <div class="km-lbl">Usuários</div>
+        <div class="km-val">1.842</div>
+        <div class="km-delta up">+128 sem.</div>
+      </div>
+      <div class="kpi-mini">
+        <div class="km-lbl">Personals</div>
+        <div class="km-val">96</div>
+        <div class="km-delta up">+7 mês</div>
+      </div>
+      <div class="kpi-mini">
+        <div class="km-lbl">Receita</div>
+        <div class="km-val">R$ 96,2k</div>
+        <div class="km-delta up">+18%</div>
+      </div>
+      <div class="kpi-mini">
+        <div class="km-lbl">Churn</div>
+        <div class="km-val">3,2%</div>
+        <div class="km-delta up">-0,4 p.p.</div>
+      </div>
+      <div class="kpi-mini">
+        <div class="km-lbl">NPS</div>
+        <div class="km-val">72</div>
+        <div class="km-delta up">+3 pts</div>
+      </div>
+      <div class="kpi-mini">
+        <div class="km-lbl">Sessões/mês</div>
+        <div class="km-val">4.218</div>
+        <div class="km-delta up">+12%</div>
+      </div>
+    </div>
+
+    <!-- 3 COLUNAS: gráficos + tabela compacta -->
+    <div class="admin-grid-3">
+
+      <!-- CRESCIMENTO -->
+      <div class="dash-block compact">
+        <div class="dash-block-head">
+          <h3>Crescimento</h3>
+        </div>
+        <svg viewBox="0 0 200 80" preserveAspectRatio="none" style="width:100%;height:70px;display:block;">
+          <polyline points="5,70 35,63 65,58 95,46 125,38 155,28 185,18" fill="none" stroke="var(--ember)" stroke-width="2" stroke-linecap="round"/>
+          <polyline points="5,70 35,63 65,58 95,46 125,38 155,28 185,18 185,80 5,80" fill="rgba(255,90,46,0.08)"/>
+          <circle cx="185" cy="18" r="3" fill="#FF5A2E"/>
+        </svg>
+        <div class="compact-stats">
+          <div><span class="cs-val">1.842</span><span class="cs-lbl">Total</span></div>
+          <div><span class="cs-val" style="color:var(--ember);">+7,5%</span><span class="cs-lbl">Mensal</span></div>
+        </div>
+      </div>
+
+      <!-- RECEITA -->
+      <div class="dash-block compact">
+        <div class="dash-block-head">
+          <h3>Receita</h3>
+        </div>
+        <svg viewBox="0 0 200 80" preserveAspectRatio="none" style="width:100%;height:70px;display:block;">
+          <polyline points="5,68 35,64 65,57 95,48 125,40 155,34 185,24" fill="none" stroke="#5BA8FF" stroke-width="2" stroke-linecap="round"/>
+          <polyline points="5,68 35,64 65,57 95,48 125,40 155,34 185,24 185,80 5,80" fill="rgba(91,168,255,0.08)"/>
+          <circle cx="185" cy="24" r="3" fill="#5BA8FF"/>
+        </svg>
+        <div class="compact-stats">
+          <div><span class="cs-val">R$ 96,2k</span><span class="cs-lbl">Mês</span></div>
+          <div><span class="cs-val" style="color:#5BA8FF;">+18%</span><span class="cs-lbl">Variação</span></div>
+        </div>
+      </div>
+
+      <!-- DISTRIBUIÇÃO DE PLANOS (compacta) -->
+      <div class="dash-block compact">
+        <div class="dash-block-head">
+          <h3>Planos</h3>
+        </div>
+        <table class="dash-table compact-table">
+          <tbody>
+            <tr>
+              <td>Pro</td><td class="num-cell">96</td><td class="num-cell">68%</td><td><span class="pill ok">Saudável</span></td>
+            </tr>
+            <tr>
+              <td>Free</td><td class="num-cell">31</td><td class="num-cell">22%</td><td><span class="pill warn">Conversão</span></td>
+            </tr>
+            <tr>
+              <td>Alunos</td><td class="num-cell">1.715</td><td class="num-cell">—</td><td><span class="pill ok">Incluso</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- 2 COLUNAS: personals + métricas de engajamento -->
+    <div class="admin-grid-2">
+
+      <!-- PERSONALS -->
+      <div class="dash-block">
+        <div class="dash-block-head">
+          <h3>Personals — consolidado</h3>
+          <a class="see-all" href="#">Exportar →</a>
+        </div>
+        <table class="dash-table compact-table">
+          <thead>
+            <tr>
+              <th>Personal</th><th>Alunos</th><th>Plano</th><th>Adesão</th><th>Receita/mês</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Beatriz Nogueira</td>
+              <td class="num-cell">41</td>
+              <td class="num-cell">Pro</td>
+              <td class="num-cell">94%</td>
+              <td class="num-cell">R$ 3.690</td>
+              <td><span class="pill ok">Ativo</span></td>
+            </tr>
+            <tr>
+              <td>Gabriel Schifter</td>
+              <td class="num-cell">24</td>
+              <td class="num-cell">Pro</td>
+              <td class="num-cell">91%</td>
+              <td class="num-cell">R$ 7.260</td>
+              <td><span class="pill ok">Ativo</span></td>
+            </tr>
+            <tr>
+              <td>Daniela Vargas</td>
+              <td class="num-cell">18</td>
+              <td class="num-cell">Pro</td>
+              <td class="num-cell">87%</td>
+              <td class="num-cell">R$ 1.620</td>
+              <td><span class="pill ok">Ativo</span></td>
+            </tr>
+            <tr>
+              <td>Carlos Mendes</td>
+              <td class="num-cell">38</td>
+              <td class="num-cell">Pro</td>
+              <td class="num-cell">91%</td>
+              <td class="num-cell">R$ 7.260</td>
+              <td><span class="pill ok">Ativo</span></td>
+            </tr>
+            <tr>
+              <td>Fernanda Costa</td>
+              <td class="num-cell">27</td>
+              <td class="num-cell">Pro</td>
+              <td class="num-cell">89%</td>
+              <td class="num-cell">R$ 2.430</td>
+              <td><span class="pill ok">Ativo</span></td>
+            </tr>
+            <tr>
+              <td>Carlos Tavares</td>
+              <td class="num-cell">3</td>
+              <td class="num-cell">Free</td>
+              <td class="num-cell">72%</td>
+              <td class="num-cell">—</td>
+              <td><span class="pill warn">Trial</span></td>
+            </tr>
+            <tr>
+              <td>Eduardo Ferreira</td>
+              <td class="num-cell">1</td>
+              <td class="num-cell">Free</td>
+              <td class="num-cell">54%</td>
+              <td class="num-cell">—</td>
+              <td><span class="pill late">Inadimplente</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bone-dim);margin-top:12px;">
+          7 de 96 · use os filtros para ver mais
+        </p>
+      </div>
+
+      <!-- COLUNA DIREITA: métricas rápidas + churn -->
+      <div>
+        <!-- ENGAJAMENTO -->
+        <div class="dash-block compact" style="margin-bottom:22px;">
+          <div class="dash-block-head">
+            <h3>Engajamento por faixa</h3>
+          </div>
+          <table class="dash-table compact-table">
+            <thead>
+              <tr><th>Faixa</th><th>Alunos</th><th>% do total</th><th>Adesão média</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>> 6 meses</td>
+                <td class="num-cell">924</td>
+                <td class="num-cell">54%</td>
+                <td class="num-cell" style="color:#3DDC84;">93%</td>
+              </tr>
+              <tr>
+                <td>3–6 meses</td>
+                <td class="num-cell">458</td>
+                <td class="num-cell">27%</td>
+                <td class="num-cell" style="color:var(--gold);">87%</td>
+              </tr>
+              <tr>
+                <td>1–3 meses</td>
+                <td class="num-cell">256</td>
+                <td class="num-cell">15%</td>
+                <td class="num-cell" style="color:var(--gold);">74%</td>
+              </tr>
+              <tr>
+                <td>< 1 mês</td>
+                <td class="num-cell">77</td>
+                <td class="num-cell">4%</td>
+                <td class="num-cell" style="color:var(--ember);">58%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- MOTIVOS DE CHURN -->
+        <div class="dash-block compact">
+          <div class="dash-block-head">
+            <h3>Churn — motivos</h3>
+          </div>
+          <table class="dash-table compact-table">
+            <thead>
+              <tr><th>Motivo</th><th>Últ. 30d</th><th>%</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mudança de cidade</td>
+                <td class="num-cell">18</td>
+                <td class="num-cell">34%</td>
+              </tr>
+              <tr>
+                <td>Inatividade (> 30d)</td>
+                <td class="num-cell">14</td>
+                <td class="num-cell">26%</td>
+              </tr>
+              <tr>
+                <td>Custo</td>
+                <td class="num-cell">11</td>
+                <td class="num-cell">21%</td>
+              </tr>
+              <tr>
+                <td>Insatisfação</td>
+                <td class="num-cell">6</td>
+                <td class="num-cell">11%</td>
+              </tr>
+              <tr>
+                <td>Outro</td>
+                <td class="num-cell">4</td>
+                <td class="num-cell">8%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RODAPÉ: receita por canal + uptime -->
+    <div class="admin-footer-grid">
+
+      <div class="dash-block compact">
+        <div class="dash-block-head">
+          <h3>Receita por canal</h3>
+        </div>
+        <table class="dash-table compact-table">
+          <tbody>
+            <tr><td>Pix</td><td class="num-cell">R$ 52,4k</td><td class="num-cell">54%</td></tr>
+            <tr><td>Cartão</td><td class="num-cell">R$ 31,2k</td><td class="num-cell">33%</td></tr>
+            <tr><td>Boleto</td><td class="num-cell">R$ 12,6k</td><td class="num-cell">13%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dash-block compact">
+        <div class="dash-block-head">
+          <h3>Uptime & performance</h3>
+        </div>
+        <table class="dash-table compact-table">
+          <tbody>
+            <tr><td>Uptime (30d)</td><td class="num-cell" style="color:#3DDC84;">99,94%</td></tr>
+            <tr><td>Tempo médio resp.</td><td class="num-cell">142ms</td></tr>
+            <tr><td>Erros 5xx</td><td class="num-cell">3</td></tr>
+            <tr><td>Deploy último</td><td class="num-cell">há 2 dias</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dash-block compact">
+        <div class="dash-block-head">
+          <h3>Top personals por receita</h3>
+        </div>
+        <table class="dash-table compact-table">
+          <tbody>
+            <tr><td>1. Gabriel Schifter</td><td class="num-cell">R$ 7.260</td></tr>
+            <tr><td>2. Carlos Mendes</td><td class="num-cell">R$ 7.260</td></tr>
+            <tr><td>3. Beatriz Nogueira</td><td class="num-cell">R$ 3.690</td></tr>
+            <tr><td>4. Fernando Costa</td><td class="num-cell">R$ 2.430</td></tr>
+            <tr><td>5. Daniela Vargas</td><td class="num-cell">R$ 1.620</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bone-dim);margin-top:18px;">
+      Dados consolidados de hoje · atualizado automaticamente · somente leitura
+    </p>
+
+  </main>
+</div>
+
+<script src="transitions.js"></script>
+</body>
+</html>

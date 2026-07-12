@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaliações físicas — FORTIS Aluno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-body">
+
+<div class="dash-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar">
+    <div class="dash-brand">
+      FOR<span>TIS</span>
+      <span class="role-tag">Aluno</span>
+    </div>
+    <nav class="dash-nav">
+      <a href="painel-usuario.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        Início
+      </a>
+      <a href="aluno-treino.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Meu treino
+      </a>
+      <a href="aluno-evolucao.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        Minha evolução
+      </a>
+      <a href="aluno-pagamentos.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+        Pagamentos
+      </a>
+      <a href="aluno-avaliacoes.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5m6 14V9m6 10V3"/></svg>
+        Avaliações físicas
+      </a>
+      <a href="aluno-dieta.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+        Dieta
+      </a>
+      <a href="painel-professor.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/><path d="M16 3l4 4-4 4M20 7H8"/></svg>
+        Visão do professor
+      </a>
+      <div class="dash-nav-divider"></div>
+      <a href="selecao-painel.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Trocar de painel
+      </a>
+      <a href="index.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Sair do FORTIS
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="dash-main">
+
+    <!-- TOPBAR -->
+    <div class="dash-topbar">
+      <div>
+        <span class="eyebrow">Suas medidas</span>
+        <h1>Avaliações <em style="color:var(--ember);font-style:normal;">físicas</em></h1>
+      </div>
+      <div class="dash-user">
+        <div class="dash-user-meta" style="text-align:right;">
+          <div class="nm">Marina Santos</div>
+          <div class="sb">Plano trimestral · ativo</div>
+        </div>
+        <div class="dash-avatar">M</div>
+      </div>
+    </div>
+
+    <div class="dash-action-row">
+      <a class="btn-action" href="prof-agenda.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        Agendar avaliação
+      </a>
+    </div>
+
+    <!-- KPIS -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5m6 14V9m6 10V3"/></svg>
+          Peso atual
+        </div>
+        <div class="kpi-num">62,4<span class="unit">kg</span></div>
+        <div class="kpi-delta down">-2,1 kg no trimestre</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          % de gordura
+        </div>
+        <div class="kpi-num">22<span class="unit">%</span></div>
+        <div class="kpi-delta up">-3 p.p. no trimestre</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          Massa magra
+        </div>
+        <div class="kpi-num">48,7<span class="unit">kg</span></div>
+        <div class="kpi-delta up">+1,4 kg</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+          IMC
+        </div>
+        <div class="kpi-num">21,8</div>
+        <div class="kpi-delta flat">Faixa saudável</div>
+      </div>
+    </div>
+
+    <!-- PRÓXIMA AVALIAÇÃO -->
+    <div class="dash-block" style="margin-bottom:22px;">
+      <div class="dash-block-head">
+        <h3>Próxima avaliação</h3>
+        <a class="see-all" href="prof-agenda.html">Agenda completa →</a>
+      </div>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Tipo</th><th>Protocolo</th><th>Data</th><th>Professor</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reavaliação</td>
+            <td class="num-cell">7 dobras</td>
+            <td class="num-cell">Em 9 dias · 22/06</td>
+            <td class="num-cell">Carlos M.</td>
+            <td><span class="pill warn">Agendada</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- HISTÓRICO -->
+    <div class="dash-block">
+      <div class="dash-block-head">
+        <h3>Histórico de avaliações</h3>
+      </div>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Data</th><th>Peso</th><th>% gordura</th><th>Massa magra</th><th>Protocolo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>02/03 · inicial</td>
+            <td class="num-cell">64,5 kg</td>
+            <td class="num-cell">25%</td>
+            <td class="num-cell">47,3 kg</td>
+            <td class="num-cell">7 dobras</td>
+          </tr>
+          <tr>
+            <td>02/04</td>
+            <td class="num-cell">63,8 kg</td>
+            <td class="num-cell">24%</td>
+            <td class="num-cell">47,8 kg</td>
+            <td class="num-cell">7 dobras</td>
+          </tr>
+          <tr>
+            <td>02/05</td>
+            <td class="num-cell">63,1 kg</td>
+            <td class="num-cell">23%</td>
+            <td class="num-cell">48,2 kg</td>
+            <td class="num-cell">7 dobras</td>
+          </tr>
+          <tr>
+            <td>02/06 · atual</td>
+            <td class="num-cell">62,4 kg</td>
+            <td class="num-cell">22%</td>
+            <td class="num-cell">48,7 kg</td>
+            <td class="num-cell">7 dobras</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+<script src="transitions.js"></script>
+</body>
+</html>

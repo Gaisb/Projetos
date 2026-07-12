@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login / Cadastro — FORTIS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+<a href="index.html" class="auth-back">← Voltar para a página inicial</a>
+
+<div class="auth-container" id="authContainer">
+
+  <!-- formulários -->
+  <div class="auth-forms" id="authForms">
+
+    <!-- ENTRAR -->
+    <form class="auth-form" id="loginForm" novalidate>
+      <div class="brand-mark">FOR<span>TIS</span></div>
+      <h2>Bem-vindo de volta</h2>
+      <p class="sub">Entre para acessar seus treinos, alunos e avaliações.</p>
+
+      <div class="field">
+        <label for="loginUsuario">Usuário</label>
+        <input id="loginUsuario" name="usuario" type="text" placeholder="admin, aluno ou prof" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="loginSenha">Senha</label>
+        <input id="loginSenha" name="senha" type="password" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <div class="forgot"><a href="#">Esqueci minha senha</a></div>
+      <p class="auth-error" id="loginError" role="alert" aria-live="polite"></p>
+      <button class="auth-submit" type="submit">Entrar</button>
+
+      <div class="auth-switch-mobile">Não tem conta? <a href="#" onclick="goSignUp(event)">Cadastre-se</a></div>
+    </form>
+
+    <!-- CADASTRAR -->
+    <div class="auth-form">
+      <div class="brand-mark">FOR<span>TIS</span></div>
+      <h2>Crie sua conta</h2>
+      <p class="sub">Comece a organizar seus treinos e alunos em poucos minutos.</p>
+
+      <div class="field">
+        <label>Nome completo</label>
+        <input type="text" placeholder="Seu nome">
+      </div>
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" placeholder="seu@email.com">
+      </div>
+      <div class="field">
+        <label>Senha</label>
+        <input type="password" placeholder="Crie uma senha">
+      </div>
+      <a class="auth-submit" href="login.html" style="text-align:center;">Criar conta</a>
+
+      <div class="auth-switch-mobile">Já tem conta? <a href="#" onclick="goSignIn(event)">Entrar</a></div>
+    </div>
+
+  </div>
+
+  <!-- painel sobreposto -->
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-overlay-inner-signup">
+      <div class="ov-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h2l1 9a2 2 0 002 2h6a2 2 0 002-2l1-9h2M9 7V5a3 3 0 016 0v2"/></svg>
+      </div>
+      <h3>Novo por aqui?</h3>
+      <p>Crie sua conta de personal trainer e comece a organizar treinos, avaliações e alunos hoje mesmo.</p>
+      <button onclick="goSignUp(event)">Criar conta</button>
+    </div>
+    <div class="auth-overlay-inner-signin">
+      <div class="ov-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4l3 2v5c0 4-3 6-3 6s-3-2-3-6V6l3-2z"/></svg>
+      </div>
+      <h3>Já treina com a gente?</h3>
+      <p>Entre na sua conta para continuar acompanhando o progresso dos seus alunos.</p>
+      <button onclick="goSignIn(event)">Entrar</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const container = document.getElementById('authContainer');
+
+  function goSignUp(e){
+    if(e) e.preventDefault();
+    container.classList.add('sign-up');
+    document.querySelectorAll('.auth-form').forEach((f,i)=>f.classList.toggle('mobile-active', i===1));
+  }
+  function goSignIn(e){
+    if(e) e.preventDefault();
+    container.classList.remove('sign-up');
+    document.querySelectorAll('.auth-form').forEach((f,i)=>f.classList.toggle('mobile-active', i===0));
+  }
+  // estado inicial no mobile: mostrar formulário de login
+  goSignIn();
+</script>
+
+<script src="auth.js"></script>
+<script src="transitions.js"></script>
+</body>
+</html>

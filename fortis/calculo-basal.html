@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de TMB — FORTIS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">FOR<span>TIS</span></a>
+    <div class="nav-links">
+      <a href="index.html#recursos">Recursos</a>
+      <a href="index.html#funciona">Como funciona</a>
+      <a href="calculo-basal.html">Calculadora TMB</a>
+      <a href="agente-ia.html">Agente IA</a>
+      <a href="contato.html">Contato</a>
+    </div>
+    <a class="nav-cta" href="login.html">Login / Cadastro</a>
+  </nav>
+</header>
+
+<main>
+  <section class="inner-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Início</a> / Calculadora</div>
+      <span class="eyebrow">Ferramenta · prévia funcional</span>
+      <h1>Quanto seu corpo gasta <em style="color:var(--ember);font-style:normal;">em repouso?</em></h1>
+      <p class="lead">Calcule a Taxa Metabólica Basal (TMB) — a energia mínima que o corpo precisa para funcionar — e veja uma estimativa de gasto calórico diário de acordo com a rotina informada.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap calc-wrap">
+
+      <div class="calc-card">
+        <div class="field">
+          <label>Sexo biológico</label>
+          <div class="toggle-group" id="sexoToggle">
+            <button type="button" data-val="masc" class="active">Masculino</button>
+            <button type="button" data-val="fem">Feminino</button>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Idade (anos)</label>
+            <input type="number" id="idade" placeholder="Ex: 28" min="10" max="100">
+          </div>
+          <div class="field">
+            <label>Peso (kg)</label>
+            <input type="number" id="peso" placeholder="Ex: 72" min="30" max="300" step="0.1">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Altura (cm)</label>
+          <input type="number" id="altura" placeholder="Ex: 175" min="100" max="250">
+        </div>
+
+        <div class="field">
+          <label>Rotina / nível de atividade</label>
+          <select id="rotina">
+            <option value="1.2">Sedentário — pouco ou nenhum exercício</option>
+            <option value="1.375">Leve — exercício 1 a 3x por semana</option>
+            <option value="1.55" selected>Moderado — exercício 3 a 5x por semana</option>
+            <option value="1.725">Intenso — exercício 6 a 7x por semana</option>
+            <option value="1.9">Muito intenso — treino 2x por dia ou trabalho físico pesado</option>
+          </select>
+        </div>
+
+        <button class="btn-calc" id="calcBtn">Calcular minha TMB</button>
+      </div>
+
+      <div class="result-card">
+        <div class="result-empty" id="resultEmpty">
+          Preencha os dados ao lado para ver sua Taxa Metabólica Basal e a estimativa de gasto calórico diário.
+        </div>
+
+        <div class="result-main" id="resultMain">
+          <div class="result-tmb-label">Taxa metabólica basal</div>
+          <div class="result-tmb"><span id="tmbValue">0</span><span style="font-size:22px;color:var(--bone-dim);"> kcal/dia</span></div>
+          <div class="result-sub">Estimativa de gasto diário total (TMB × rotina): <b style="color:var(--bone);" id="tdeeValue">0 kcal</b></div>
+
+          <div class="goal-grid">
+            <div>
+              <div class="g-num" id="cutValue">—</div>
+              <div class="g-lbl">Déficit</div>
+            </div>
+            <div>
+              <div class="g-num" id="maintainValue">—</div>
+              <div class="g-lbl">Manutenção</div>
+            </div>
+            <div>
+              <div class="g-num" id="bulkValue">—</div>
+              <div class="g-lbl">Superávit</div>
+            </div>
+          </div>
+
+          <div class="calc-note">
+            Cálculo baseado na fórmula de Mifflin-St Jeor. Os valores de déficit e superávit usam uma margem de ±500 kcal e servem apenas como ponto de partida — o personal trainer deve ajustar conforme avaliação individual do aluno.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <a href="index.html" class="logo" style="font-size:18px;">FOR<span>TIS</span></a>
+    <div class="foot-note">Conceito de apresentação · sem vínculo com MFIT Personal ou terceiros</div>
+    <div class="foot-badge">v0.1 — proposta inicial</div>
+  </div>
+</footer>
+
+<script>
+  let sexo = 'masc';
+  document.querySelectorAll('#sexoToggle button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('#sexoToggle button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      sexo = btn.dataset.val;
+    });
+  });
+
+  document.getElementById('calcBtn').addEventListener('click', ()=>{
+    const idade = parseFloat(document.getElementById('idade').value);
+    const peso = parseFloat(document.getElementById('peso').value);
+    const altura = parseFloat(document.getElementById('altura').value);
+    const fator = parseFloat(document.getElementById('rotina').value);
+
+    if(!idade || !peso || !altura){
+      alert('Preencha idade, peso e altura para calcular.');
+      return;
+    }
+
+    let tmb;
+    if(sexo === 'masc'){
+      tmb = 10*peso + 6.25*altura - 5*idade + 5;
+    } else {
+      tmb = 10*peso + 6.25*altura - 5*idade - 161;
+    }
+
+    const tdee = tmb * fator;
+
+    document.getElementById('tmbValue').textContent = Math.round(tmb).toLocaleString('pt-BR');
+    document.getElementById('tdeeValue').textContent = Math.round(tdee).toLocaleString('pt-BR') + ' kcal';
+    document.getElementById('cutValue').textContent = Math.round(tdee-500).toLocaleString('pt-BR');
+    document.getElementById('maintainValue').textContent = Math.round(tdee).toLocaleString('pt-BR');
+    document.getElementById('bulkValue').textContent = Math.round(tdee+500).toLocaleString('pt-BR');
+
+    document.getElementById('resultEmpty').style.display = 'none';
+    document.getElementById('resultMain').classList.add('show');
+  });
+</script>
+
+<script src="transitions.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha evolução — FORTIS Aluno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-body">
+
+<div class="dash-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar">
+    <div class="dash-brand">
+      FOR<span>TIS</span>
+      <span class="role-tag">Aluno</span>
+    </div>
+    <nav class="dash-nav">
+      <a href="painel-usuario.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
+        Início
+      </a>
+      <a href="aluno-treino.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Meu treino
+      </a>
+      <a href="aluno-evolucao.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        Minha evolução
+      </a>
+      <a href="aluno-pagamentos.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+        Pagamentos
+      </a>
+      <a href="aluno-avaliacoes.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5m6 14V9m6 10V3"/></svg>
+        Avaliações físicas
+      </a>
+      <a href="aluno-dieta.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+        Dieta
+      </a>
+      <a href="painel-professor.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/><path d="M16 3l4 4-4 4M20 7H8"/></svg>
+        Visão do professor
+      </a>
+      <div class="dash-nav-divider"></div>
+      <a href="selecao-painel.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Trocar de painel
+      </a>
+      <a href="index.html" class="dash-nav-leave">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Sair do FORTIS
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="dash-main">
+
+    <!-- TOPBAR -->
+    <div class="dash-topbar">
+      <div>
+        <span class="eyebrow">Seu progresso</span>
+        <h1>Minha <em style="color:var(--ember);font-style:normal;">evolução</em></h1>
+      </div>
+      <div class="dash-user">
+        <div class="dash-user-meta" style="text-align:right;">
+          <div class="nm">Marina Santos</div>
+          <div class="sb">Plano trimestral · ativo</div>
+        </div>
+        <div class="dash-avatar">M</div>
+      </div>
+    </div>
+
+    <!-- KPIS DE EVOLUÇÃO -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+          Carga no supino
+        </div>
+        <div class="kpi-num">42<span class="unit">kg</span></div>
+        <div class="kpi-delta up">+38% em 12 sem.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 12l2 2 4-4"/></svg>
+          Frequência
+        </div>
+        <div class="kpi-num">96<span class="unit">%</span></div>
+        <div class="kpi-delta up">5 dias seguidos</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5m6 14V9m6 10V3"/></svg>
+          % de gordura
+        </div>
+        <div class="kpi-num">22<span class="unit">%</span></div>
+        <div class="kpi-delta up">-3 p.p. no trimestre</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Sessões totais
+        </div>
+        <div class="kpi-num">128</div>
+        <div class="kpi-delta up">+12 este mês</div>
+      </div>
+    </div>
+
+    <!-- GRÁFICO PRINCIPAL -->
+    <div class="dash-block mini-chart" style="margin-bottom:22px;">
+      <div class="dash-block-head">
+        <h3>Carga no supino — 12 semanas</h3>
+        <a class="see-all" href="#">Ver todos os exercícios →</a>
+      </div>
+      <svg viewBox="0 0 320 140" preserveAspectRatio="none">
+        <polyline class="chart-fill" points="10,120 60,110 110,96 160,72 210,58 260,32 310,18 310,140 10,140" fill="rgba(255,90,46,0.10)"/>
+        <polyline class="chart-line" points="10,120 60,110 110,96 160,72 210,58 260,32 310,18"/>
+        <circle cx="310" cy="18" r="5" fill="#FF5A2E"/>
+      </svg>
+      <div style="border-top:1px solid var(--line);padding-top:14px;margin-top:14px;display:flex;gap:24px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;">42 kg</div>
+          <div style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Carga atual</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:var(--ember);">+38%</div>
+          <div style="font-size:11px;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;">Evolução</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HISTÓRICO DE CARGAS -->
+    <div class="dash-block">
+      <div class="dash-block-head">
+        <h3>Histórico de cargas</h3>
+      </div>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Exercício</th><th>Carga anterior</th><th>Carga atual</th><th>Variação</th><th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supino reto</td>
+            <td class="num-cell">38 kg</td>
+            <td class="num-cell">42 kg</td>
+            <td class="num-cell" style="color:#3DDC84;">+10,5%</td>
+            <td class="num-cell">Hoje</td>
+          </tr>
+          <tr>
+            <td>Supino inclinado halteres</td>
+            <td class="num-cell">16 kg</td>
+            <td class="num-cell">18 kg</td>
+            <td class="num-cell" style="color:#3DDC84;">+12,5%</td>
+            <td class="num-cell">3 dias atrás</td>
+          </tr>
+          <tr>
+            <td>Crucifixo na polia</td>
+            <td class="num-cell">12 kg</td>
+            <td class="num-cell">14 kg</td>
+            <td class="num-cell" style="color:#3DDC84;">+16,7%</td>
+            <td class="num-cell">1 semana atrás</td>
+          </tr>
+          <tr>
+            <td>Tríceps na polia</td>
+            <td class="num-cell">22 kg</td>
+            <td class="num-cell">22 kg</td>
+            <td class="num-cell" style="color:var(--bone-dim);">=</td>
+            <td class="num-cell">2 semanas atrás</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+<script src="transitions.js"></script>
+</body>
+</html>
