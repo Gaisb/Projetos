@@ -1,14 +1,14 @@
 # CineScope — catálogo de filmes
 
-Aplicação full stack de busca construída com Python, SQLite, HTML, CSS e JavaScript puros. O banco `filmes.db` é criado automaticamente com os 101 registros de `../Projeto_08_Banco_Dados_Filmes-main/filmes.sql` na primeira execução.
+Aplicação full stack de busca construída com ASP.NET Core, C#, SQLite, HTML, CSS e JavaScript puros. A API e o frontend são servidos pela mesma aplicação na porta 8000.
 
 ## Executar
 
-Requer apenas Python 3:
+Requer o SDK do .NET 10:
 
 ```bash
-cd /home/schifter/Documentos/ProjetoDeFilmes
-python3 server.py
+cd /home/schifter/Documentos/Projetos/ProjetoDeFilmes
+dotnet run
 ```
 
 Acesse <http://127.0.0.1:8000>.
@@ -20,4 +20,5 @@ Acesse <http://127.0.0.1:8000>.
 - filtros preservados na URL;
 - API JSON (`/api/filmes`, `/api/filtros` e `/api/health`);
 - interface responsiva e acessível, com estados de carregamento, vazio e erro;
-- zero dependências externas em tempo de execução (a fonte web possui fallback local).
+- API ASP.NET Core integrada ao frontend;
+- banco SQLite local com 101 filmes.

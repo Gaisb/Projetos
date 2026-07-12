@@ -8,7 +8,7 @@ using Microsoft.Extensions.FileProviders;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-var projectRoot = Path.GetFullPath("..", app.Environment.ContentRootPath);
+var projectRoot = app.Environment.ContentRootPath;
 var databasePath = Path.Combine(projectRoot, "filmes.db");
 var publicPath = Path.Combine(projectRoot, "public");
 var connectionString = new SqliteConnectionStringBuilder { DataSource = databasePath }.ToString();
