@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ControleLab - Gestão de empréstimos de ferramentas e equipamentos">
+  <title>ControleLab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#132238',
+            brand: { 50: '#eff8ff', 500: '#1677ff', 600: '#0866db', 700: '#0754b5' }
+          },
+          boxShadow: { soft: '0 18px 50px rgba(15, 23, 42, .08)' }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="bg-ink text-white lg:fixed lg:inset-y-0 lg:w-72">
+      <div class="flex h-full flex-col px-6 py-7">
+        <div class="flex items-center gap-3">
+          <div class="grid h-11 w-11 place-items-center rounded-2xl bg-brand-500 font-black">CL</div>
+          <div><p class="text-xl font-bold">ControleLab</p><p class="text-xs text-slate-400">Gestão de empréstimos</p></div>
+        </div>
+        <nav class="mt-10 grid grid-cols-2 gap-2 lg:grid-cols-1" aria-label="Navegação principal">
+          <button class="nav-item active" data-view="dashboard">Visão geral</button>
+          <button class="nav-item" data-view="tools">Ferramentas</button>
+          <button class="nav-item" data-view="loans">Empréstimos</button>
+          <button class="nav-item" data-view="history">Histórico</button>
+        </nav>
+        <div class="mt-auto hidden rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-300 lg:block">
+          <p class="font-semibold text-white">MVP acadêmico</p>
+          <p class="mt-1">Equipe DevProMax<br>Gabriel Schifter</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="w-full lg:ml-72">
+      <header class="border-b border-slate-200 bg-white/90 px-5 py-5 backdrop-blur md:px-10">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+          <div><p class="text-sm font-medium text-brand-600">Laboratório escolar</p><h1 id="page-title" class="text-2xl font-bold text-ink">Visão geral</h1></div>
+          <button class="primary-btn" data-open="loan-modal">+ Novo empréstimo</button>
+        </div>
+      </header>
+
+      <div class="mx-auto max-w-7xl p-5 md:p-10">
+        <section id="dashboard" class="view space-y-8">
+          <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <article class="metric"><span>Total de itens</span><strong id="metric-total">0</strong><small>Cadastrados no sistema</small></article>
+            <article class="metric"><span>Disponíveis</span><strong id="metric-available" class="text-emerald-600">0</strong><small>Prontos para uso</small></article>
+            <article class="metric"><span>Emprestados</span><strong id="metric-loaned" class="text-amber-600">0</strong><small>Fora do laboratório</small></article>
+            <article class="metric"><span>Empréstimos ativos</span><strong id="metric-active" class="text-brand-600">0</strong><small>Aguardando devolução</small></article>
+          </div>
+
+          <div class="grid gap-6 xl:grid-cols-[1.2fr_.8fr]">
+            <article class="panel">
+              <div class="panel-head"><div><h2>Empréstimos em aberto</h2><p>Acompanhe os itens que precisam voltar.</p></div><button class="text-link" data-view-link="loans">Ver todos</button></div>
+              <div id="dashboard-loans" class="divide-y divide-slate-100"></div>
+            </article>
+            <article class="panel bg-gradient-to-br from-ink to-slate-800 text-white">
+              <p class="text-sm font-semibold text-blue-300">Objetivo do projeto</p>
+              <h2 class="mt-3 text-2xl font-bold">Menos planilhas, mais controle.</h2>
+              <p class="mt-3 text-sm leading-6 text-slate-300">Centralizar registros, identificar quem está com cada item e evitar perdas ou esquecimentos de devolução.</p>
+              <div class="mt-8 rounded-2xl bg-white/10 p-4"><p class="text-xs uppercase tracking-wider text-slate-400">Status do sistema</p><p class="mt-2 flex items-center gap-2 font-semibold"><span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>API e banco conectados</p></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="tools" class="view hidden space-y-6">
+          <div class="panel">
+            <div class="panel-head flex-wrap gap-4">
+              <div><h2>Ferramentas e equipamentos</h2><p>Consulte o estoque e a disponibilidade.</p></div>
+              <button class="secondary-btn" data-open="tool-modal">+ Cadastrar ferramenta</button>
+            </div>
+            <div class="mb-5 grid gap-3 sm:grid-cols-[1fr_190px]">
+              <input id="tool-search" class="field" placeholder="Buscar por nome ou código">
+              <select id="tool-filter" class="field"><option value="todos">Todos os status</option><option value="disponivel">Disponíveis</option><option value="emprestado">Com empréstimo</option></select>
+            </div>
+            <div class="overflow-x-auto"><table class="data-table"><thead><tr><th>Código</th><th>Item</th><th>Estoque</th><th>Disponíveis</th><th>Status</th></tr></thead><tbody id="tools-table"></tbody></table></div>
+          </div>
+        </section>
+
+        <section id="loans" class="view hidden space-y-6">
+          <div class="panel">
+            <div class="panel-head"><div><h2>Empréstimos ativos</h2><p>Registre devoluções com responsável e horário.</p></div><button class="primary-btn" data-open="loan-modal">+ Novo empréstimo</button></div>
+            <div id="loans-list" class="grid gap-4"></div>
+          </div>
+        </section>
+
+        <section id="history" class="view hidden space-y-6">
+          <div class="panel">
+            <div class="panel-head"><div><h2>Histórico de operações</h2><p>Empréstimos e devoluções registrados.</p></div></div>
+            <div class="overflow-x-auto"><table class="data-table"><thead><tr><th>Item</th><th>Aluno</th><th>Empréstimo</th><th>Devolução</th><th>Status</th></tr></thead><tbody id="history-table"></tbody></table></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+
+  <dialog id="tool-modal" class="modal">
+    <form id="tool-form" class="modal-card">
+      <div class="modal-head"><div><p class="eyebrow">Novo cadastro</p><h2>Cadastrar ferramenta</h2></div><button type="button" class="close-btn" data-close aria-label="Fechar">×</button></div>
+      <div class="grid gap-4 sm:grid-cols-2"><label>Código<input class="field mt-1" name="code" maxlength="50" required placeholder="Ex.: FER-003"></label><label>Quantidade<input class="field mt-1" name="quantity" type="number" min="1" max="4294967295" value="1" required></label></div>
+      <label class="block mt-4">Nome<input class="field mt-1" name="name" maxlength="120" required placeholder="Nome da ferramenta"></label>
+      <label class="block mt-4">Descrição<textarea class="field mt-1 min-h-24" name="description" maxlength="255" placeholder="Informações adicionais"></textarea></label>
+      <div class="modal-actions"><button type="button" class="secondary-btn" data-close>Cancelar</button><button class="primary-btn">Salvar ferramenta</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="loan-modal" class="modal">
+    <form id="loan-form" class="modal-card">
+      <div class="modal-head"><div><p class="eyebrow">Nova movimentação</p><h2>Registrar empréstimo</h2></div><button type="button" class="close-btn" data-close aria-label="Fechar">×</button></div>
+      <label class="block">Ferramenta<select id="loan-tool" class="field mt-1" name="toolId" required></select></label>
+      <div class="mt-4 grid gap-4 sm:grid-cols-[1fr_120px]"><label>Aluno<input class="field mt-1" name="studentName" maxlength="120" required placeholder="Nome completo"></label><label>Quantidade<input class="field mt-1" name="quantity" type="number" min="1" max="4294967295" value="1" required></label></div>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2"><label>Matrícula<input class="field mt-1" name="studentRegistration" maxlength="40" placeholder="Opcional"></label><label>Responsável<input class="field mt-1" name="responsibleName" maxlength="120" required placeholder="Quem entrega o item"></label></div>
+      <label class="block mt-4">Observação<textarea class="field mt-1 min-h-20" name="notes" maxlength="255" placeholder="Opcional"></textarea></label>
+      <div class="modal-actions"><button type="button" class="secondary-btn" data-close>Cancelar</button><button class="primary-btn">Confirmar empréstimo</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="return-modal" class="modal">
+    <form id="return-form" class="modal-card max-w-md">
+      <input type="hidden" name="loanId">
+      <div class="modal-head"><div><p class="eyebrow">Finalizar operação</p><h2>Registrar devolução</h2></div><button type="button" class="close-btn" data-close aria-label="Fechar">×</button></div>
+      <p id="return-description" class="mb-4 text-sm text-slate-600"></p>
+      <label>Responsável pela devolução<input class="field mt-1" name="responsibleName" maxlength="120" required placeholder="Nome do responsável"></label>
+      <div class="modal-actions"><button type="button" class="secondary-btn" data-close>Cancelar</button><button class="primary-btn">Confirmar devolução</button></div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
